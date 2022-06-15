@@ -156,8 +156,8 @@ bool CMandelbrot::InternOnCreateShader()
 	// -----------------------------------------------------------------------------
 	// Load and compile the shader programs.
 	// -----------------------------------------------------------------------------
-	CreateVertexShader("..\\data\\shader\\mandelbrot.fx", "VSShader", &m_pVertexShader);
-	CreatePixelShader("..\\data\\shader\\mandelbrot.fx", "PSShader", &m_pPixelShader);
+	CreateVertexShader("..\\data\\shader\\klausur.fx", "VSShader", &m_pVertexShader);
+	CreatePixelShader("..\\data\\shader\\klausur.fx", "PSShader", &m_pPixelShader);
 
 	return true;
 }

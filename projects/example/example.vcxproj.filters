@@ -45,18 +45,24 @@
     <None Include="bump_mapping.cpp">
       <Filter>src\example</Filter>
     </None>
+    <None Include="klausur.cpp">
+      <Filter>src</Filter>
+    </None>
     <None Include="..\..\data\shader\mandelbrot.fx">
-      <Filter>shader\example</Filter>
+      <Filter>shader</Filter>
     </None>
     <None Include="..\..\data\shader\chess.fx">
-      <Filter>shader\example</Filter>
+      <Filter>shader</Filter>
     </None>
-    <None Include="klausur.cpp">
+    <None Include="..\..\data\shader\klausur.fx">
+      <Filter>shader</Filter>
+    </None>
+    <None Include="..\..\data\shader\chess.cpp">
       <Filter>src</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\data\shader\chess.cpp">
+    <ClCompile Include="..\src\mandelbrot.cpp">
       <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>

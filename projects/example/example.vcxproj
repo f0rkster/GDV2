@@ -53,7 +53,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\data\shader\chess.cpp" />
+    <None Include="..\..\data\shader\chess.cpp" />
+    <ClCompile Include="..\src\mandelbrot.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\data\shader\klausur.fx">
+      <FileType>Document</FileType>
+    </None>
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{2226DB5F-4E89-48C0-8A1F-6F90641D0437}</ProjectGuid>
