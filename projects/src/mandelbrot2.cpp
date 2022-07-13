@@ -30,7 +30,7 @@ private:
         unsigned int m_Padding[3];
     };
 
-private: 
+private:
     int m_ticks;
     int m_MaxIteration;
 
@@ -105,8 +105,8 @@ bool CApplication::InternOnReleaseConstantBuffers()
 
 bool CApplication::InternOnCreateShader()
 {
-    CreateVertexShader("..\\data\\shader\\mandelbrot.fx", "VSMain", &m_pVertexShader);
-    CreatePixelShader("..\\data\\shader\\mandelbrot.fx", "PSMain", &m_pPixelShader);
+    CreateVertexShader("..\\data\\shader\\mandelbrot2.fx", "VSMain", &m_pVertexShader);
+    CreatePixelShader("..\\data\\shader\\mandelbrot2.fx", "PSMain", &m_pPixelShader);
 
     return true;
 }
@@ -239,34 +239,38 @@ bool CApplication::InternOnFrame()
 
     PSPerObjectConstants PerObjectConstantsPS;
 
-    switch (m_MaxIteration%4)
-    {
-    case 0:
-        PerObjectConstantsPS.m_PSColor[0] = 0.25f; //R
-        PerObjectConstantsPS.m_PSColor[1] = 0.25f; //G
-        PerObjectConstantsPS.m_PSColor[2] = 0.0;   //B
-        break;    
-    case 1:
-        PerObjectConstantsPS.m_PSColor[0] = 0.55f; //R
-        PerObjectConstantsPS.m_PSColor[1] = 0.25f; //G
-        PerObjectConstantsPS.m_PSColor[2] = 0.0;   //B
-        break;    
-    case 2:
-        PerObjectConstantsPS.m_PSColor[0] = 0.75f; //R
-        PerObjectConstantsPS.m_PSColor[1] = 0.25f; //G
-        PerObjectConstantsPS.m_PSColor[2] = 0.0;   //B
-        break;
-    case 3:
-        PerObjectConstantsPS.m_PSColor[0] = 0.95f; //R
-        PerObjectConstantsPS.m_PSColor[1] = 0.25f; //G
-        PerObjectConstantsPS.m_PSColor[2] = 0.0;   //B
-        break;
-    default:
-        PerObjectConstantsPS.m_PSColor[0] = m_MaxIteration; //R
-        PerObjectConstantsPS.m_PSColor[1] = m_MaxIteration; //G
-        PerObjectConstantsPS.m_PSColor[2] = m_MaxIteration; //B
-        break;
-    }
+    //switch (m_MaxIteration%4)
+    //{
+    //case 0:
+    //    PerObjectConstantsPS.m_PSColor[0] = 0.25f; //R
+    //    PerObjectConstantsPS.m_PSColor[1] = 0.25f; //G
+    //    PerObjectConstantsPS.m_PSColor[2] = 0.0;   //B
+    //    break;    
+    //case 1:
+    //    PerObjectConstantsPS.m_PSColor[0] = 0.55f; //R
+    //    PerObjectConstantsPS.m_PSColor[1] = 0.25f; //G
+    //    PerObjectConstantsPS.m_PSColor[2] = 0.0;   //B
+    //    break;    
+    //case 2:
+    //    PerObjectConstantsPS.m_PSColor[0] = 0.75f; //R
+    //    PerObjectConstantsPS.m_PSColor[1] = 0.25f; //G
+    //    PerObjectConstantsPS.m_PSColor[2] = 0.0;   //B
+    //    break;
+    //case 3:
+    //    PerObjectConstantsPS.m_PSColor[0] = 0.95f; //R
+    //    PerObjectConstantsPS.m_PSColor[1] = 0.25f; //G
+    //    PerObjectConstantsPS.m_PSColor[2] = 0.0;   //B
+    //    break;
+    //default:
+    //    PerObjectConstantsPS.m_PSColor[0] = m_MaxIteration; //R
+    //    PerObjectConstantsPS.m_PSColor[1] = m_MaxIteration; //G
+    //    PerObjectConstantsPS.m_PSColor[2] = m_MaxIteration; //B
+    //    break;
+    //}
+
+    PerObjectConstantsPS.m_PSColor[0] = m_MaxIteration; //R
+    PerObjectConstantsPS.m_PSColor[1] = m_MaxIteration; //G
+    PerObjectConstantsPS.m_PSColor[2] = m_MaxIteration; //B
 
     m_ticks++;
     if (m_ticks == 10)

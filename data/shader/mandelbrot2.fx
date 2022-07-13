@@ -16,7 +16,7 @@ cbuffer VSPerObjectConstants : register(b1)
 cbuffer PSPerObjectConstants : register(b0)
 {
     float4 c_PSConstant0;
-    uint4  c_PSConstant1;
+    uint4 c_PSConstant1;
 }
 
 #define c_PSColor        c_PSConstant0.xyz
@@ -48,7 +48,7 @@ PSInput VSMain(VSInput _Input)
     PSInput Result;
 
     Result.m_Position = CSPosition;
-    Result.m_PositionNormed = _Input.m_PositionNormed;
+    Result.m_PositionNormed = _Input.m_PositionNormed * c_PSMaxIteration;
 
     return Result;
 }
@@ -57,11 +57,10 @@ PSInput VSMain(VSInput _Input)
 // Util Functions
 // -----------------------------------------------------------------------------
 
-// Source: https://arukiap.github.io/fractals/2019/06/02/rendering-the-mandelbrot-set-with-shaders.html
 float2 squareImganiary(float2 _number)
 {
     return float2(_number[0] * _number[0] - _number[1] * _number[1]
-    , 2*_number[0]*_number[1]);
+    , 2 * _number[0] * _number[1]);
 }
 
 float iterateMandelbrot(float2 _coord, int _maxIterations)
@@ -71,11 +70,10 @@ float iterateMandelbrot(float2 _coord, int _maxIterations)
     {
         z = squareImganiary(z) + _coord;
         if (length(z) > 2)
-            // return i / _maxIterations;
-            return 1.0f;
+            return i / _maxIterations;
+
     }
-    // return _maxIterations;
-    return 0.0f;
+    return _maxIterations;
 
 }
 
@@ -86,4 +84,6 @@ float iterateMandelbrot(float2 _coord, int _maxIterations)
 float4 PSMain(PSInput _Input) : SV_TARGET
 {
     return float4(iterateMandelbrot(_Input.m_PositionNormed, (int) c_PSMaxIteration) * c_PSColor, 1.0f);
+    //return float4(c_PSColor, 1.0f);
+
 }

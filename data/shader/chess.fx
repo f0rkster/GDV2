@@ -13,7 +13,7 @@ cbuffer PSPerObjectConstants : register(b0)
 {
     float3 c_PSColorA;
     float3 c_PSColorB;
-    uint2 c_PSSizeInCells;
+    uint2  c_PSSizeInCells;
 }
 
 struct VSInput
