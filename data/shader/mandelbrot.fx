@@ -57,8 +57,42 @@ PSInput VSMain(VSInput _Input)
 // Util Functions
 // -----------------------------------------------------------------------------
 
+/*  Explanation of how the Mandelbrot algorithm works
+    The Mandelbrot set is the set of complex numbers.
+    Complex numbers consist of a real part and an imaginary part.
+        Z = a + bi
+    1I equals the square root of -1.
+    The complex number is represented here in a float2.
+    The first value represents the real part and the second value the imaginary part.
+
+                     a
+            |-------------------|
+            |                c  |       C is a specific coordinate.
+         bi |                   |       The Pixel consits of c = a + bi
+            |                   |
+            |-------------------|
+
+    The Mandelbrot set is defined by the following iterative rule.
+        z[0] = 0
+        z[n+1] = z[n]^2+c
+        c = a + bi
+
+    For Example:
+        Z[0] =     0
+        Z[1] =     0 + C
+        Z[2] =   C^2 + C
+        Z[3] =  (C^2 + C)^2 + C
+        Z[4] = ((C^2 + C)^2 + C)^2 +C
+        Z[5] = ....
+
+    All pixels that are in the Mandelbrot set are drawn in black, all others are colored.
+    
+    In each pass, the algorithm approaches the real set of complex numbers. Because of this, the shape gets sharper with each pass.
+
+*/
+
 // Source: https://arukiap.github.io/fractals/2019/06/02/rendering-the-mandelbrot-set-with-shaders.html
-float2 squareImganiary(float2 _number)
+float2 squareImaginary(float2 _number)
 {
     return float2(_number[0] * _number[0] - _number[1] * _number[1]
     , 2*_number[0]*_number[1]);
@@ -69,14 +103,11 @@ float iterateMandelbrot(float2 _coord, int _maxIterations)
     float2 z = float2(0, 0);
     for (int i = 0; i < _maxIterations; i++)
     {
-        z = squareImganiary(z) + _coord;
+        z = squareImaginary(z) + _coord;
         if (length(z) > 2)
-            // return i / _maxIterations;
             return 1.0f;
     }
-    // return _maxIterations;
     return 0.0f;
-
 }
 
 

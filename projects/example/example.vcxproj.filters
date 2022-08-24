@@ -16,6 +16,12 @@
     <Filter Include="shader\example">
       <UniqueIdentifier>{296738ff-ae75-4b3b-9970-4fcb713f6a8f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="shader\example\lesson">
+      <UniqueIdentifier>{5b037b20-4482-4cdd-9d01-d6336351984e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\example\lesson">
+      <UniqueIdentifier>{a4da7ec5-0ce9-4f23-be08-e8b026e09554}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="triangle_colored.cpp">
@@ -45,25 +51,39 @@
     <None Include="bump_mapping.cpp">
       <Filter>src\example</Filter>
     </None>
-    <None Include="klausur.cpp">
-      <Filter>src</Filter>
-    </None>
     <None Include="..\..\data\shader\mandelbrot.fx">
       <Filter>shader</Filter>
     </None>
     <None Include="..\..\data\shader\chess.fx">
-      <Filter>shader</Filter>
+      <Filter>shader\example\lesson</Filter>
     </None>
     <None Include="..\..\data\shader\klausur.fx">
-      <Filter>shader</Filter>
+      <Filter>shader\example\lesson</Filter>
     </None>
     <None Include="..\..\data\shader\chess.cpp">
-      <Filter>src</Filter>
+      <Filter>src\example\lesson</Filter>
+    </None>
+    <None Include="klausur.cpp">
+      <Filter>src\example\lesson</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\src\mandelbrot.cpp">
+    <ClCompile Include="..\src\main.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\CApplication.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\CApplication.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\SVSConstantsMandelbrot.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\SPSConstantsMandelbrot.h">
+      <Filter>header</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
