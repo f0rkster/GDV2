@@ -50,3 +50,6 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+/projects/build/win32/example/Debug
+/projects/.vs/projects/v17
+/docs

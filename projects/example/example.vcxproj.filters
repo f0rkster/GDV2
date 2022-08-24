@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{f81eda51-ea38-4757-a2c9-6e8e98432c7f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="header">
+      <UniqueIdentifier>{35812c73-ee47-4687-87af-5f2ab16eaa6c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shader">
+      <UniqueIdentifier>{c21d87d5-48cb-432f-b880-1360b34a6e4c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\example">
+      <UniqueIdentifier>{6136a7f8-1fd1-4407-93be-1005b767ce64}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shader\example">
+      <UniqueIdentifier>{296738ff-ae75-4b3b-9970-4fcb713f6a8f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shader\example\lesson">
+      <UniqueIdentifier>{5b037b20-4482-4cdd-9d01-d6336351984e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\example\lesson">
+      <UniqueIdentifier>{a4da7ec5-0ce9-4f23-be08-e8b026e09554}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="triangle_colored.cpp">
+      <Filter>src\example</Filter>
+    </None>
+    <None Include="quad_textured.cpp">
+      <Filter>src\example</Filter>
+    </None>
+    <None Include="post_effect.cpp">
+      <Filter>src\example</Filter>
+    </None>
+    <None Include="..\..\data\shader\bump_mapping.fx">
+      <Filter>shader\example</Filter>
+    </None>
+    <None Include="..\..\data\shader\colored.fx">
+      <Filter>shader\example</Filter>
+    </None>
+    <None Include="..\..\data\shader\post_effect.fx">
+      <Filter>shader\example</Filter>
+    </None>
+    <None Include="..\..\data\shader\simple.fx">
+      <Filter>shader\example</Filter>
+    </None>
+    <None Include="..\..\data\shader\textured.fx">
+      <Filter>shader\example</Filter>
+    </None>
+    <None Include="bump_mapping.cpp">
+      <Filter>src\example</Filter>
+    </None>
+    <None Include="..\..\data\shader\mandelbrot.fx">
+      <Filter>shader</Filter>
+    </None>
+    <None Include="..\..\data\shader\chess.fx">
+      <Filter>shader\example\lesson</Filter>
+    </None>
+    <None Include="..\..\data\shader\klausur.fx">
+      <Filter>shader\example\lesson</Filter>
+    </None>
+    <None Include="..\..\data\shader\chess.cpp">
+      <Filter>src\example\lesson</Filter>
+    </None>
+    <None Include="klausur.cpp">
+      <Filter>src\example\lesson</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\main.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\CApplication.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\CApplication.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\SVSConstantsMandelbrot.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\SPSConstantsMandelbrot.h">
+      <Filter>header</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
